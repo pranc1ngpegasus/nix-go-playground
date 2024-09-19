@@ -58,6 +58,8 @@
             httpie
           ];
           shellHook = ''
+            export PORT=8080
+            export LOG_LEVEL=debug
             ${checks.shellHook}
           '';
         };
