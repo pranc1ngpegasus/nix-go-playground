@@ -46,6 +46,13 @@
               language = "system";
               pass_filenames = false;
             };
+            taplo = {
+              enable = true;
+              entry = "taplo format .";
+              files = "^.*\\.toml";
+              language = "system";
+              pass_filenames = false;
+            };
           };
         };
       in {
@@ -53,6 +60,7 @@
           name = "nix-go-playground";
           nativeBuildInputs = [];
           buildInputs = with pkgs; [
+            air
             go_1_23
             golangci-lint
             httpie
